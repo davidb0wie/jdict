@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e63946">
+  <title>JDict - Dictionnaire Japonais</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Loading overlay -->
+  <div id="loading-overlay">
+    <div class="loading-title">辞書</div>
+    <div class="loading-msg" id="loading-msg">Initialisation du dictionnaire...</div>
+    <div class="progress-container" id="progress-container" style="display:none">
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="progress-text" id="progress-text">0%</div>
+    </div>
+  </div>
+
+  <!-- Header avec recherche -->
+  <div id="header" style="display:none">
+    <div class="header-top">
+      <h1>辞書</h1>
+      <div class="search-wrapper">
+        <input type="search" id="search-input" placeholder="Chercher en japonais ou français..." autocomplete="off" autocorrect="off" spellcheck="false">
+        <button id="clear-btn" onclick="clearSearch()">✕</button>
+      </div>
+    </div>
+    <div class="search-filters">
+      <button class="filter-btn active" data-mode="all" onclick="setFilter(this)">Tout</button>
+      <button class="filter-btn" data-mode="ja" onclick="setFilter(this)">日本語</button>
+      <button class="filter-btn" data-mode="fr" onclick="setFilter(this)">Français</button>
+      <button class="filter-btn" data-mode="en" onclick="setFilter(this)">English</button>
+    </div>
+  </div>
+
+  <div id="status-bar" style="display:none"></div>
+
+  <div id="results"></div>
+
+  <!-- Panneau de détail -->
+  <div id="detail-panel">
+    <div class="detail-header">
+      <button class="back-btn" onclick="closeDetail()">← Retour</button>
+      <span id="detail-header-title"></span>
+    </div>
+    <div class="detail-body" id="detail-body"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
