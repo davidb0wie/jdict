@@ -1,11 +1,13 @@
-const CACHE_NAME = 'jdict-v1';
+const CACHE_NAME = 'jdict-v2';
 const APP_SHELL = [
   './',
   './index.html',
   './app.js',
   './styles.css',
   './manifest.json',
-  './logo.jpg'
+  './logo.jpg',
+  './data/fr-index.json',
+  './data/en-index.json'
 ];
 
 self.addEventListener('install', event => {
